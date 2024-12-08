@@ -20,19 +20,11 @@ pipeline {
         }
         steps{
           script {
-                 build().call()
+                sh"""
+                 mvn test
+                 """
             }
         }
       }
-
-
-def build () {
-    return {
-        sh """
-         echo "************Building the ${params.Environment} pipeline***************"
-         mvn test 
-        """ 
-    }
-}
 }
 }
