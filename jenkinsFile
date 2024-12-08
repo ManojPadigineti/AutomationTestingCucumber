@@ -24,14 +24,15 @@ pipeline {
             }
         }
       }
-  }
 
-def build() {
+
+def build () {
     return {
         sh """
          echo "************Building the ${params.Environment} pipeline***************"
          mvn test 
         """ 
     }
+}
 }
 }
