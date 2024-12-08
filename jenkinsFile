@@ -20,7 +20,8 @@ pipeline {
         }
         steps{
           script {
-                build().call()
+                // build().call()
+                echo "Build"
             }
         }
       }
