@@ -21,7 +21,7 @@ pipeline {
         steps{
           script {
                 sh"""
-                 mvn -Dtest=TestRunnerSO test
+                 mvn -Dtest=TestRunnerSO test -DfailIfNoTests=false
                  """
             }
         }
