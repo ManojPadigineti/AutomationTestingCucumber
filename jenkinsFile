@@ -1,0 +1,37 @@
+pipeline {
+    agent{
+        label 'worker-node'
+    }
+  parameters { 
+    choice(name: 'Environment', choices: ['dev', 'test', 'stage', 'prod'], description: 'Which Environment is the Build the Test') 
+    booleanParam(name: 'Build', defaultValue: false, description: 'Is application build required?') 
+    }
+  environment {
+    APPLICATION= "Java_Application"
+  }
+
+
+  stages{
+      stage ('Automation Build') {
+        when{
+            anyOf {
+              expression {params.Build == true}
+            }
+        }
+        steps{
+          script {
+                build().call()
+            }
+        }
+      }
+  }
+
+def build() {
+    return {
+        sh """
+         echo "************Building the ${params.Environment} pipeline***************"
+         mvn clean package 
+        """ 
+    }
+}
+ }
