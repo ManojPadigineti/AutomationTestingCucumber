@@ -2,17 +2,16 @@ package StepDefinition;
 
 
 
-
+import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class StepPass_Fail {
-	public static  Scenario scenario;
+	public static Scenario scenario=null;
 	@Before
 	public void beforeStep(Scenario scenario) {
 		this.scenario = scenario; 
-		
 		}
 	@AfterStep
 	public void tearDown(Scenario scenario) {
