@@ -21,7 +21,7 @@ pipeline {
         steps{
           script {
                 sh"""
-                 mvn -Dtest=TestRunnerSO.java test
+                 mvn -Dtest=TestRunnerSO test
                  """
             }
         }
