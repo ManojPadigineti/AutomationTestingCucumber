@@ -3,7 +3,7 @@ package StepDefinition;
 import static org.junit.Assert.assertEquals;
 
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.Scenario.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -37,7 +37,7 @@ public class PractiseFeature {
 		try {
 			StepPass_Fail.scenario.log(s);
 			StepPass_Fail.scenario.log("this is used to sent the logs");
-			StepPass_Fail.scenario.write("1123344 added");
+			//StepPass_Fail.scenario.write("1123344 added");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
